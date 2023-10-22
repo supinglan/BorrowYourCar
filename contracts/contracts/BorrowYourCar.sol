@@ -61,6 +61,7 @@ contract BorrowYourCar is ERC721 {
         for (uint i = 0; i < borrowedCars.length; i++) {
             //如果有车辆已经超过借用时间，将其加入空闲车辆列表，从已租车辆列表中移除
             if (uint256(cars[borrowedCars[i]].borrowUntil) < block.timestamp) {
+                cars[borrowedCars[i]].isAvailable = true;
                 availableCars.push(borrowedCars[i]);
                 removeValue(borrowedCars, borrowedCars[i]);
             }

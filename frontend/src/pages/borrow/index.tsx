@@ -124,12 +124,12 @@ const LotteryPage = () => {
                 //输出查询结果
                 if(owner === '0x0000000000000000000000000000000000000000'){
 
-                    alert('该车辆不存在,请检查输入的车辆id是否正确')
+                    alert('该车辆不存在,请检查输入的车辆ID是否正确')
                 }
                 else if(borrower === '0x0000000000000000000000000000000000000000'){
-                    alert('车辆id：' + queryCarId + '\n车主是：' + owner + '\n该车辆当前空闲')
+                    alert('车辆ID：' + queryCarId + '\n车主是：' + owner + '\n该车辆当前空闲')
                 }
-                else alert('车辆id：' + queryCarId + '\n车主是：' + owner + '\n借用者是：' + borrower)
+                else alert('车辆ID：' + queryCarId + '\n车主是：' + owner + '\n借用者是：' + borrower)
             } catch (error: any) {
                 alert(error.message)
             }
@@ -257,7 +257,7 @@ const LotteryPage = () => {
                     <ul >
                         {myCars.map((car, index) => (
                             <li key={index} style={{ flex: '0 0 25%' }}>
-                                <span>车辆Id：{car.tokenId} </span>
+                                <span>车辆ID：{car.tokenId} </span>
                                 <br></br>
                                 <ImageComponent tokenId={car.tokenId} />
                             </li>
@@ -267,7 +267,7 @@ const LotteryPage = () => {
                     <ul>
                         {availableCars.map((car, index) => (
                             <li key={index}>
-                                <span>车辆Id：{car.tokenId}</span>
+                                <span>车辆ID：{car.tokenId}</span>
                                 <br></br>
                                 <ImageComponent tokenId={car.tokenId} />
                             </li>
@@ -279,7 +279,9 @@ const LotteryPage = () => {
                     <div style={{marginBottom: '20px'}}>操作栏</div>
                     <div className='buttons'>
                         <Button style={{width: '200px'}} onClick={updateInfo}>更新可用汽车</Button>
-                        <Button style={{width: '200px'}} onClick={addCar}>获取车辆</Button>
+                        {/*用于给用户发放测试用的汽车，在实际使用时去除该功能*/}
+                        {/*<Button style={{width: '200px'}} onClick={addCar}>获取车辆</Button>*/}
+                        <span>借用车辆需要支付每小时1求是币的租赁费用</span>
                         <div>
                             <span>车辆ID：</span>
                             <input type="number"style={{marginRight: '20px'}} value={borrowCarId} onChange={e => setBorrowCarId(e.target.value)} />
