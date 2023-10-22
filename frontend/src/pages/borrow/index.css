@@ -1,0 +1,41 @@
+.container {
+    background: #F2F3F4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main {
+    padding: 10px;
+
+}
+
+.operation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+.buttons {
+    height: 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.car-list-container {
+    display: flex;
+}
+
+.car-list {
+    display: flex;
+}
+
+.car-item {
+    margin-right: 20px;
+}
